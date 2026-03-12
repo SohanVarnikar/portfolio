@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
+import process from "process";
 
 test("Environment matches .env.example", () => {
   // 1. Read the .env.example file
@@ -15,7 +16,7 @@ test("Environment matches .env.example", () => {
 
   // 3. Verify each key exists in the current environment
   requiredKeys.forEach((key) => {
-    const value = import.meta.env[key];
+    const value = import.meta.env[key] || process.env[key];
 
     expect(
       value,
