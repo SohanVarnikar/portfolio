@@ -8,7 +8,7 @@ const title = import.meta.env.VITE_APP_TITLE || "Portfolio";
   <div>
     <h1>{{ title }}</h1>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue site" />
 </template>
 
 <style scoped>
