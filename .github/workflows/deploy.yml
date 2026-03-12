@@ -28,8 +28,14 @@ jobs:
       - name: Lint Code 🧹
         run: npm run lint
 
+      - name: Run Tests 🧪
+        run: npm test
+
       - name: Build 🏗️
         run: npm run build
+        env:
+          # This maps the GitHub Secret to an Environment Variable
+          VITE_APP_TITLE: ${{ secrets.VITE_APP_TITLE }}
 
       - name: Upload artifact 📤
         uses: actions/upload-pages-artifact@v3

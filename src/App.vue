@@ -1,16 +1,12 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
+
+const title = import.meta.env.VITE_APP_TITLE || "Portfolio";
 </script>
 
 <template>
   <div>
-    <h1>My Portfolio</h1>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <h1>{{ title }}</h1>
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>

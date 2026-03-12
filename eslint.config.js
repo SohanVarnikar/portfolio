@@ -6,13 +6,21 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    ignores: ["dist/**", "node_modules/**", "public/**"],
+    ignores: ["dist/**", "node_modules/**", "public/**", "**/*.svg"],
   },
   {
     files: ["**/*.{js,mjs,cjs,vue}"],
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
+    settings: {
+      "import/resolver": {
+        alias: {
+          map: [["@", "./src"]],
+          extensions: [".js", ".vue", ".json"],
+        },
+      },
+    },
   },
   ...pluginVue.configs["flat/essential"].map((config) => ({
     ...config,
