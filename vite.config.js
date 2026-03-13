@@ -19,10 +19,6 @@ export default defineConfig(({ mode }) => ({
   test: {
     globals: true,
     environment: "jsdom",
-    // this line to handles the 'file://' issue
-    transformMode: {
-      web: [/.[tj]sx$/],
-    },
     // Load all environment variables (prefixed or not) into the test context
     env: loadEnv(mode, process.cwd(), ""),
   },
